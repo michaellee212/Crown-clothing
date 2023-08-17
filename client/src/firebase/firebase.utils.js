@@ -1,6 +1,8 @@
-import firebase from 'firebase/app';
-import 'firebase/firestore';
-import 'firebase/auth';
+// import firebase from 'firebase/app';
+// import 'firebase/firestore';
+// import 'firebase/auth';
+import { initializeApp } from 'firebase-admin/app';
+
 
 const config = {
 	apiKey: 'AIzaSyBmAVPMgc-CyFKcdV1GVlNQJPf1hDTGpUQ',
@@ -12,7 +14,7 @@ const config = {
 	appId: '1:22826744112:web:a1ab88a7907a56b3'
 };
 
-firebase.initializeApp(config);
+initializeApp(config);
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
 	if (!userAuth) return;
